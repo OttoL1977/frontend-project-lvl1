@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
-import message from '../src/index.js';
+import correctNumber from '../number.js';
 
 console.log('Welcome to the Brain Games!');
-message();
+
+correctNumber();
