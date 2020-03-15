@@ -3,7 +3,7 @@
 
 Игра: "Проверка на чётность"
 
-[![asciicast](https://asciinema.org/a/N3GraJT4BHDGirplItHk3wIoT.svg)](https://asciinema.org/a/N3GraJT4BHDGirplItHk3wIoT)
+[![asciicast](https://asciinema.org/a/6t73Lk5XBusVaFjWurGhyzR3R.svg)](https://asciinema.org/a/6t73Lk5XBusVaFjWurGhyzR3R)
 
 Игра: "Калькулятор"
 
