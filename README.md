@@ -15,7 +15,7 @@
 
 Игра "Арифметическая прогрессия"
 
-[![asciicast](https://asciinema.org/a/7mxf5KVryK9FuRbD7zrOVmv1E.svg)](https://asciinema.org/a/7mxf5KVryK9FuRbD7zrOVmv1E)
+[![asciicast](https://asciinema.org/a/COIhpQzssVTjvMjjWs8oPgiMg.svg)](https://asciinema.org/a/COIhpQzssVTjvMjjWs8oPgiMg)
 
 Игра "Простое ли число?"
 
