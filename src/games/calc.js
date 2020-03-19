@@ -1,11 +1,8 @@
 import readlineSync from 'readline-sync';
+import randomNumber from '../random.js';
 
 export default function brainCalc() {
   const operators = ['-', '+', '*'];
-  function randomNumber(min = 0, max = 100) {
-    const rand = Math.floor(Math.random() * (max - min + 1)) + min;
-    return rand;
-  }
   const currentOperator = () => {
     const k = randomNumber(0, operators.length - 1);
     return operators[k];

@@ -2,6 +2,7 @@ import readlineSync from 'readline-sync';
 // import message from './index.js';
 
 export default function correctNumber() {
+  console.log('Welcome to the Brain Games!');
   const actual = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${actual}!`);
   console.log('Answer "yes" if the number is even, otherwise answer "no".');

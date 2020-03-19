@@ -1,10 +1,7 @@
 import readlineSync from 'readline-sync';
+import randomNumber from '../random.js';
 
 export default function brainGcd() {
-  function randomNumber(min = 1, max = 100) {
-    const rand = Math.floor(Math.random() * (max - min + 1)) + min;
-    return rand;
-  }
   const divider = (a, b) => {
     let valueDiv;
     for (let k = 1; k <= a; k += 1) {
