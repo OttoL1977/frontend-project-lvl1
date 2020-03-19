@@ -1,4 +1,4 @@
-[![Test Coverage](https://api.codeclimate.com/v1/badges/191ac3f2381d51a7859c/test_coverage)](https://codeclimate.com/github/OttoL1977/frontend-project-lvl1/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/191ac3f2381d51a7859c/maintainability)](https://codeclimate.com/github/OttoL1977/frontend-project-lvl1/maintainability)
 ![Node CI](https://github.com/OttoL1977/frontend-project-lvl1/workflows/Node%20CI/badge.svg)
 
 Игра: "Проверка на чётность"
