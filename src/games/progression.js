@@ -8,16 +8,14 @@ export default function brainProgression() {
   for (let i = 0; i < 3; i += 1) {
     const newArr = [];
     const arrNum = [];
-    const numberOne = randomNumber(1, 20);
+    let numberOne = randomNumber(1, 20);
     const period = randomNumber(1, 100);
-    const lengthProgression = 10;
     const numberHidden = randomNumber(2, 8);
-    let number = numberOne;
     let answerHiddenNumber;
     let str = '';
-    for (let k = 0; k < lengthProgression; k += 1) {
-      arrNum.push(number);
-      number += period;
+    for (let k = 0; k < 10; k += 1) {
+      arrNum.push(numberOne);
+      numberOne += period;
     }
     for (let g = 0; g < arrNum.length; g += 1) {
       if (g === numberHidden) {
