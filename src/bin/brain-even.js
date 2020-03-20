@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import correctNumber from '../number.js';
+import correctNum from '../number.js';
 
-correctNumber();
+correctNum();

@@ -1,44 +1,36 @@
-import readlineSync from 'readline-sync';
 import randomNumber from '../random.js';
+import flow from '../flow.js';
+
+const description = 'What is the result of the expression?';
+
+const operators = ['-', '+', '*'];
+const currentOperator = () => {
+  const k = randomNumber(0, operators.length - 1);
+  return operators[k];
+};
+const calculate = (a, b, oper) => {
+  switch (oper) {
+    case '-':
+      return a - b;
+    case '*':
+      return a * b;
+    case '+':
+      return a + b;
+    default: return null;
+  }
+};
 
 export default function brainCalc() {
-  const operators = ['-', '+', '*'];
-  const currentOperator = () => {
-    const k = randomNumber(0, operators.length - 1);
-    return operators[k];
-  };
-  const calculate = (a, b, oper) => {
-    switch (oper) {
-      case '-':
-        return a - b;
-      case '*':
-        return a * b;
-      case '+':
-        return a + b;
-      default: return null;
-    }
-  };
-
-  console.log('Welcome to the Brain Games!');
-  const actual = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${actual}!`);
-  console.log('What is the result of the expression?');
-  for (let i = 0; i <= 2; i += 1) {
+  const arr = [];
+  for (let i = 0; i < 3; i += 1) {
     const a = randomNumber();
     const b = randomNumber();
     const operator = currentOperator(operators);
-    const value = calculate(a, b, operator);
-    console.log(`Question: ${a} ${operator} ${b}`);
-    const answer = readlineSync.question('Your answer: ');
-    if (+value === +answer) {
-      console.log('Correct!');
-    } else {
-      console.log(`"${answer}" is wrong answer ;(. Correct answer was "${value}".`);
-      console.log(`Let's try again, ${actual}!`);
-      break;
-    }
-    if (i === 2) {
-      console.log(`Congratulations, ${actual}!`);
-    }
+    const newArr = [];
+    const number = calculate(a, b, operator);
+    newArr.push(`Question: ${a} ${operator} ${b}`);
+    newArr.push(String(number));
+    arr.push(newArr);
   }
+  flow(arr, description);
 }

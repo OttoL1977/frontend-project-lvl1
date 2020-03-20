@@ -1,34 +1,28 @@
-import readlineSync from 'readline-sync';
 import randomNumber from '../random.js';
+import flow from '../flow.js';
 
-export default function () {
-  console.log('Welcome to the Brain Games!');
-  const actual = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${actual}!`);
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-  for (let i = 0; i <= 2; i += 1) {
-    let answerNumberHidden = '';
-    const numberHidden = randomNumber(1, 100);
-    for (let k = 2; k < numberHidden; k += 1) {
-      if (numberHidden % k === 0) {
-        answerNumberHidden = 'no';
-        break;
-      }
-      if (k === numberHidden - 1 && numberHidden % k !== 0) {
-        answerNumberHidden = 'yes';
-      }
-    }
-    console.log(`Question: ${numberHidden}`);
-    const answer = readlineSync.question('Your answer: ');
-    if (String(answer) === String(answerNumberHidden)) {
-      console.log('Correct!');
-    } else {
-      console.log('Error!');
-      console.log(`Let's try again, ${actual}!`);
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const numberPrime = (number) => {
+  let answerPrime;
+  for (let k = 2; k < number; k += 1) {
+    if (number % k === 0) {
+      answerPrime = 'no';
       break;
     }
-    if (i === 2) {
-      console.log(`Congratulations, ${actual}!`);
+    if (k === number - 1 && number % k !== 0) {
+      answerPrime = 'yes';
     }
+  } return answerPrime;
+};
+
+export default function () {
+  const arr = [];
+  for (let i = 0; i < 3; i += 1) {
+    const newArr = [];
+    const number = randomNumber();
+    newArr.push(number);
+    newArr.push(numberPrime(number));
+    arr.push(newArr);
   }
+  flow(arr, description);
 }

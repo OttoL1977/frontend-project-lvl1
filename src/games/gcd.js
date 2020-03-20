@@ -1,34 +1,26 @@
-import readlineSync from 'readline-sync';
 import randomNumber from '../random.js';
+import flow from '../flow.js';
+
+const description = 'Find the greatest common divisor of given numbers.';
+const divider = (a, b) => {
+  let valueDiv;
+  for (let k = 1; k <= a; k += 1) {
+    if (a % k === 0 && b % k === 0) {
+      valueDiv = k;
+    }
+  } return valueDiv;
+};
 
 export default function brainGcd() {
-  const divider = (a, b) => {
-    let valueDiv;
-    for (let k = 1; k <= a; k += 1) {
-      if (a % k === 0 && b % k === 0) {
-        valueDiv = k;
-      }
-    } return valueDiv;
-  };
-  console.log('Welcome to the Brain Games!');
-  const actual = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${actual}!`);
-  console.log('Find the greatest common divisor of given numbers.');
-  for (let i = 0; i <= 2; i += 1) {
+  const arr = [];
+  for (let i = 0; i < 3; i += 1) {
+    const newArr = [];
     const a = randomNumber();
     const b = randomNumber();
-    console.log(`Question: ${a} ${b}`);
-    const answer = readlineSync.question('Your answer: ');
-    const value = divider(a, b);
-    if (+value === +answer) {
-      console.log('Correct!');
-    } else {
-      console.log('Error!');
-      console.log(`Let's try again, ${actual}!`);
-      break;
-    }
-    if (i === 2) {
-      console.log(`Congratulations, ${actual}!`);
-    }
+    const number = `Question: ${a} ${b}`;
+    newArr.push(number);
+    newArr.push(String(divider(a, b)));
+    arr.push(newArr);
   }
+  flow(arr, description);
 }
