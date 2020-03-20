@@ -16,9 +16,9 @@ export default function correctNum() {
   const arr = [];
   for (let i = 0; i < 3; i += 1) {
     const newArr = [];
-    const number = randomNumber();
-    newArr.push(number);
-    newArr.push(correctNumber(number));
+    const num = randomNumber();
+    newArr.push(num);
+    newArr.push(correctNumber(num));
     arr.push(newArr);
   }
   flow(arr, description);
