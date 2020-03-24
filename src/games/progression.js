@@ -44,14 +44,6 @@ export default function getBrainProgression() {
     const newArrNum = [];
     answerHiddenNumber = getHiddenNumber();
     const str = getStringNumber(newArr, answerHiddenNumber);
-    /* for (let g = 0; g < newArr.length; g += 1) {
-      if (newArr[g] === answerHiddenNumber) {
-        str += '.. ';
-      } else {
-        str += newArr[g];
-        str += ' ';
-      }
-    } */
     newArrNum.push(String(str));
     newArrNum.push(String(answerHiddenNumber));
     arr.push(newArrNum);

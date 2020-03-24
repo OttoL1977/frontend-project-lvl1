@@ -6,7 +6,6 @@ const numbersOfGames = 3;
 const checkNumberPrime = (number) => {
   let answerPrime;
   for (let k = 2; k < number; k += 1) {
-    answerPrime = (number % k === 0) ? 'no' : 'yes';
     if (number % k === 0) {
       answerPrime = 'no';
       break;
