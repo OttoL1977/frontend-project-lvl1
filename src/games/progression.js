@@ -1,13 +1,14 @@
-import randomNumber from '../random.js';
+import getRandomNumber from '../random.js';
 import flow from '../flow.js';
 
 const description = 'What number is missing in the progression?';
+const numbersOfGames = 3;
 let newArr = [];
 let answerHiddenNumber;
 
-function period() {
-  let numberOne = randomNumber(1, 20);
-  const periodNum = randomNumber(1, 100);
+function getPeriod() {
+  let numberOne = getRandomNumber(1, 20);
+  const periodNum = getRandomNumber(1, 100);
   for (let k = 0; k < 10; k += 1) {
     newArr.push(numberOne);
     numberOne += periodNum;
@@ -15,8 +16,8 @@ function period() {
   return newArr;
 }
 
-function hiddenNumber() {
-  const numberHidden = randomNumber(2, 8);
+function getHiddenNumber() {
+  const numberHidden = getRandomNumber(2, 8);
   for (let g = 0; g < newArr.length; g += 1) {
     if (g === numberHidden) {
       answerHiddenNumber = newArr[g];
@@ -24,12 +25,12 @@ function hiddenNumber() {
   } return answerHiddenNumber;
 }
 
-export default function brainProgression() {
+export default function getBrainProgression() {
   const arr = [];
-  for (let i = 0; i < 3; i += 1) {
-    period();
+  for (let i = 0; i < numbersOfGames; i += 1) {
+    getPeriod();
     const newArrNum = [];
-    answerHiddenNumber = hiddenNumber();
+    answerHiddenNumber = getHiddenNumber();
     let str = '';
     for (let g = 0; g < newArr.length; g += 1) {
       if (newArr[g] === answerHiddenNumber) {
