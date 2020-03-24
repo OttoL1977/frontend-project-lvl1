@@ -16,11 +16,7 @@ export default function (arr, description) {
       console.log(`"${answerUser}" is wrong answer ;(. Correct answer was "${answerCorrect}"`);
       console.log(`Let's try again, ${actual}`);
       break;
-    } /* else {
-      console.log('Mistake!');
-      console.log(`Let's try again, ${actual}!`);
-      break;
-    } */
+    }
     if (i === 2) {
       console.log(`Congratulations, ${actual}!`);
     }

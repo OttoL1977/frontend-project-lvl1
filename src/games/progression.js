@@ -25,21 +25,33 @@ function getHiddenNumber() {
   } return answerHiddenNumber;
 }
 
+function getStringNumber(arr, number) {
+  let str = '';
+  for (let g = 0; g < arr.length; g += 1) {
+    if (arr[g] === number) {
+      str += '.. ';
+    } else {
+      str += newArr[g];
+      str += ' ';
+    }
+  } return str;
+}
+
 export default function getBrainProgression() {
   const arr = [];
   for (let i = 0; i < numbersOfGames; i += 1) {
     getPeriod();
     const newArrNum = [];
     answerHiddenNumber = getHiddenNumber();
-    let str = '';
-    for (let g = 0; g < newArr.length; g += 1) {
+    const str = getStringNumber(newArr, answerHiddenNumber);
+    /* for (let g = 0; g < newArr.length; g += 1) {
       if (newArr[g] === answerHiddenNumber) {
         str += '.. ';
       } else {
         str += newArr[g];
         str += ' ';
       }
-    }
+    } */
     newArrNum.push(String(str));
     newArrNum.push(String(answerHiddenNumber));
     arr.push(newArrNum);
