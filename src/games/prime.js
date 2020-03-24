@@ -3,6 +3,7 @@ import flow from '../flow.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const numbersOfGames = 3;
+
 const checkNumberPrime = (number) => {
   let answerPrime;
   for (let k = 2; k < number; k += 1) {

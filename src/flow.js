@@ -10,13 +10,21 @@ export default function (arr, description) {
     const [number, answerCorrect] = arr[i];
     console.log(`Question: ${number}`);
     const answerUser = readlineSync.question('Your answer: ');
-    if (answerUser === answerCorrect) {
+    /* if (answerUser === answerCorrect) {
       console.log('Correct!');
     } else if (answerUser !== answerCorrect) {
       console.log(`"${answerUser}" is wrong answer ;(. Correct answer was "${answerCorrect}"`);
       console.log(`Let's try again, ${actual}`);
       break;
     }
+    if (i === 2) {
+      console.log(`Congratulations, ${actual}!`);
+    } */
+    if (answerUser !== answerCorrect) {
+      console.log(`"${answerUser}" is wrong answer ;(. Correct answer was "${answerCorrect}"`);
+      console.log(`Let's try again, ${actual}`);
+      break;
+    } console.log('Correct!');
     if (i === 2) {
       console.log(`Congratulations, ${actual}!`);
     }
